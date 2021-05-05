@@ -1,0 +1,5 @@
+\subsubsection{VoIP}
+
+\gls{sip} traffic was identified on \glspl{cpe} that were bound to customers subscribed to the \gls{voip} service of the \gls{isp}. The captured traffic shows that \gls{tls} is not used and the transport protocol utilized is \gls{udp}. The destination of the packets was \url{192.168.80.1:5060}, which acts as a \gls{sip} Outbound Proxy.
+
+By inspecting the content of \gls{sip} requests, it was able to verify that \url{ims3.gvt.net.br} was being used as the \gls{sip} registrar and the \gls{sip} realm. For the username, the customer’s phone number formatted with the E.164 standard was used. The password could not be retrieved in plaintext, as it is sent hashed and would require brute-forcing to reveal its contents.

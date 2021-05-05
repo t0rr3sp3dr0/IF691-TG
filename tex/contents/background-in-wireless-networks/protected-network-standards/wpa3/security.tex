@@ -1,0 +1,5 @@
+\paragraph{Security}
+
+The \gls{wpa}3-\gls{sae} Transition Mode was designed to interoperate with \gls{wpa}2 devices. By doing so, attackers were able to downgrade connections to \gls{wpa}2 and perform offline dictionary attacks, recovering the network passphrase \cite{dragonblood}.
+
+In 2019, flaws in the Dragonfly Handshake of \gls{wpa}3 were found \cite{dragonblood}. They allowed offline brute-forcing of passphrases used on \gls{wpa}3-Personal networks by analyzing the time spent when authenticating with the victim using Brainpool Curves. If the attacker is able to execute user-mode code (e.g. JavaScript on a browser) on a client’s device, it is also possible to analyze memory access patterns when the client constructs the commit frame of a Dragonfly Handshake and achieve the same result.

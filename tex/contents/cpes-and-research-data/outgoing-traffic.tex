@@ -1,0 +1,11 @@
+\subsection{Outgoing Traffic}
+
+\glspl{cpe} 4 and 7 have tcpdump \cite{tcpdump} installed, allowing the outgoing traffic to be inspected from inside the device. The tcpdump binary was introduced on \gls{cpe} 5 via a \gls{tftp} server \cite{rfc1350}, allowing the traffic to be inspected as well.
+
+\glspl{cpe} 0 to 3 and 6 neither have tcpdump installed nor are able to have it introduced on them by any means. On \glspl{cpe} 0 and 1, the only data that could be extracted were snapshots of the \gls{tcp} Translation Table.
+
+With the environment set, the capture is started and the broadband connection is provided to the \gls{cpe}, allowing it to initiate connections.
+
+\input{contents/cpes-and-research-data/outgoing-traffic/cwmp}
+\input{contents/cpes-and-research-data/outgoing-traffic/voip}
+\input{contents/cpes-and-research-data/outgoing-traffic/iptv}

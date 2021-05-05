@@ -1,0 +1,15 @@
+\section{Introduction}
+\label{section:intro}
+
+Upon acquisition of a residential Internet service, it is usual for \glspl{isp} to provide the necessary equipment for the customer to use their services \cite{vivo_agreement,claro_agreement,oi_agreement,tim_agreement}. Depending on whether or not the customer has also subscribed to \gls{voip} and/or \gls{iptv} services, the device may be more complex to deliver telephony and \gls{tv} functionality.
+
+The device leased by the \gls{isp} generally acts as a residential gateway and it is also known as \gls{cpe}. The \gls{cpe} is installed on the subscriber’s residence and connects to the \gls{isp} via the physical medium negotiated, in Brazil, mostly copper and fiber \cite{anatel_bandalargafixa}. With the device targeted to anyone who wants Internet and other services at home, it is desired that the \gls{cpe} works as a plug’n’play solution with no technical expertise required from its users.
+
+When providing this out-of-the-box solution, the \gls{isp} takes responsibility for securing the residential gateway with the default configurations, as most users will never change them. But serious vulnerabilities have been found in the past years on residential gateways from several vendors, and some of them were introduced by \gls{isp}s, raising concerns about the security measures put in place in \glspl{cpe} leased to customers \cite{home_router_security_report}.
+
+The authentication and encryption mechanisms for wireless networks also play a major role in securing the data transmitted wirelessly, as anyone may listen to the bits being sent and received. But over the time, some standards have been found to be flawed and are no longer considered safe to be used, even when accurately implemented and properly configured \cite{removal_of_tkip_from_wifi_devices,wpa3_security_considerations}.
+
+These problems are aggravated by the discrepancy between how long the manufacturer and/or the \gls{isp} are willing to provide security patches for the device and how long customers use the equipment. Maintaining a different range of devices or replacing existing \glspl{cpe} with newer ones is costly and doesn't benefit the company directly, making it not attractive from a business perspective \cite{netgear_security_advisory}.
+
+\input{contents/introduction/objectives}
+\input{contents/introduction/document-structure}

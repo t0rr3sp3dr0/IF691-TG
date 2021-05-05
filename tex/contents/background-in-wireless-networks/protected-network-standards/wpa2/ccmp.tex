@@ -1,0 +1,35 @@
+\paragraph{CCMP}
+
+The \gls{ccmp} uses the \gls{aes} block cipher operating in \gls{ccm} mode. \gls{ctr} provides data confidentiality, while \gls{cbc}-\gls{mac} is used for authentication and integrity. Originally, \gls{ccmp} supported only 128-bit \gls{aes} keys (\gls{ccmp}-128), but later revisions of the algorithm allowed the use of 256-bit keys (\gls{ccmp}-256) as well.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{contents/background-in-wireless-networks/protected-network-standards/wpa2/ccmp/expanded-ccmp-mpdu.png}
+    \caption{Expanded \gls{ccmp} \gls{mpdu}}
+    {Source: \cite{ieee_80211_2020}}
+    \label{figure:ieee80211_figure43n}
+\end{figure}
+
+Not needing to rely on \gls{wep} anymore, \gls{ccmp} unified the \gls{iv} field of \gls{wep} and \gls{eiv} field of \gls{wpa} into the 8-octet \gls{ccmp} Header field. The \gls{wep} \gls{icv} was dropped and the \gls{mic} field was turned into a variable size field, 8-octet or 16-octet long for \gls{ccmp}-128 and \gls{ccmp}-256 respectively. The resulting \gls{mpdu} is shown on Figure \ref{figure:ieee80211_figure43n}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{contents/background-in-wireless-networks/protected-network-standards/wpa2/ccmp/ccmp-encapsulation-block-diagram.png}
+    \caption{\gls{ccmp} Encapsulation Block Diagram}
+    {Source: \cite{ieee_80211_2020}}
+    \label{figure:ieee80211_figure43o}
+\end{figure}
+
+On the encryption process, represented on Figure \ref{figure:ieee80211_figure43o}, \gls{ccmp} maintains a \gls{pn} value for each \gls{tk}, incrementing it sequentially for each \gls{mpdu} processed. The \gls{pn} is used along the \gls{kid} to build the \gls{ccmp} Header, part of the final \gls{mpdu}. \gls{pn} is also used together with the \gls{a2} and Priority of the \gls{mpdu} being consumed to calculate the Nonce Block, avoiding replay attacks. The \gls{mac} Header has its values authenticated by constructing the \gls{aad}, providing integrity protection. Finally, the \gls{ccm} Originator Processing is invoked with the values of \gls{aad}, nonce, plaintext, and \gls{tk} to form the ciphertext and the \gls{mic}. The encrypted \gls{mpdu} is accordingly assembled and sequentially transmitted.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{contents/background-in-wireless-networks/protected-network-standards/wpa2/ccmp/ccmp-decapsulation-block-diagram.png}
+    \caption{\gls{ccmp} Decapsulation Block Diagram}
+    {Source: \cite{ieee_80211_2020}}
+    \label{figure:ieee80211_figure43r}
+\end{figure}
+
+To decrypt the \gls{mpdu}, the \gls{aad} is constructed in the same way as the original \gls{mpdu}. The Nonce Block uses the \gls{a2} and Priority values from \gls{mpdu} as usual, but it also gets the \gls{pn} from there. Then the \gls{ccm} Recipient Processing is invoked with the \gls{tk}, the calculated \gls{aad} and Nonce Block, and the extracted ciphertext and \gls{mic} values. The decrypted \gls{mpdu} is assembled with the resulting plaintext. Before having the \gls{mpdu} returned, the replay check is executed, which verifies if the extracted \gls{pn} value is less than or equal to the local \gls{pn} value for the \gls{tk}, implying a frame replay. The decryption process is shown on Figure \ref{figure:ieee80211_figure43r}.
+
+\FloatBarrier

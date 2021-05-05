@@ -1,0 +1,36 @@
+\begin{landscape}
+
+\subsection{Wireless Configuration}
+
+While the \glspl{cpe} were turned on, iwlist and wash tools were used on a computer within range of the networks to inspect their configuration. The information printed on the label of each device was used to associate the \gls{wifi} networks with the \gls{cpe}s.
+
+The information collected is presented on Table \ref{table:cpes_wlan} and includes the Network \gls{bssid}, the Network \gls{essid}, the Frequency Band, the Security Protocol, the Pairwise Cipher, the Authentication Suite, the Network Passphrase, the \gls{wps} Version, and \gls{wps} Authentication Method.
+
+\begin{table}[h]
+    \makebox[\linewidth]{
+        \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+            \thead{\gls{cpe}\\Identifier} & \thead{Network\\\gls{bssid}} & \thead{Network\\\gls{essid}} & \thead{Frequency\\Band} & \thead{Security\\Protocol} & \thead{Pairwise\\Cipher} & \thead{Authentication\\Suite} & \thead{Network\\Passphrase} & \thead{\gls{wps}\\Version} & \thead{\gls{wps}\\Authentication\\Method} \\
+            \hline
+            \gls{cpe}-0 & \texttt{5C:C9:D3:D8:73:1A} & \texttt{VIVO-731B} & 2.4 \gls{G}\gls{Hz} & \gls{wpa} + \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{C9D3D8731B} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-1 & \texttt{54:2F:8A:6C:BE:98} & \texttt{VIVO-BE99} & 2.4 \gls{G}\gls{Hz} & \gls{wpa} + \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{2F8A6CBE99} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-2 & \texttt{34:57:60:13:11:CC} & \texttt{VIVO-11CC} & 2.4 \gls{G}\gls{Hz} & \gls{wpa} + \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{57601311CC} & 2.0 & \gls{pbc} + \gls{pin} \\
+            \gls{cpe}-3 & \texttt{C0:3D:D9:53:32:08} & \texttt{VIVO-3208} & 2.4 \gls{G}\gls{Hz} & \gls{wpa} + \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{t4v4AysytY} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-4 & \texttt{10:72:23:0D:83:CA} & \texttt{VIVOFIBRA-83CC} & 2.4 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{72230D83CC} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-4 & \texttt{06:72:23:0D:83:D7} & \texttt{VIVOFIBRA-83CC} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{72230D83CC} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-4 & \texttt{10:72:23:0D:83:D7} & \texttt{VIVOFIBRA-83CC-5G} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{72230D83CC} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-5 & \texttt{98:7E:CA:44:F8:8F} & \texttt{VIVOFIBRA-F881} & 2.4 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{uzrUaxS565} & 2.0 & \gls{pbc} + \gls{pin} \\
+            \gls{cpe}-5 & \texttt{86:7E:CA:44:F8:8E} & \texttt{VIVOFIBRA-F881} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{uzrUaxS565} & 2.0 & \gls{pbc} + \gls{pin} \\
+            \gls{cpe}-5 & \texttt{98:7E:CA:44:F8:8E} & \texttt{VIVOFIBRA-F881-5G} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{uzrUaxS565} & 2.0 & \gls{pbc} + \gls{pin} \\
+            \gls{cpe}-6 & \texttt{AC:C6:62:B3:E3:80} & \texttt{VIVOFIBRA-E37E} & 2.4 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{c662b3e37e} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-6 & \texttt{AC:C6:62:B3:E3:87} & \texttt{VIVOFIBRA-E37E-5G} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{c662b3e37e} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-7 & \texttt{A4:33:D7:53:2C:C8} & \texttt{VIVOFIBRA-2CC8} & 2.4 \gls{G}\gls{Hz} & \gls{wpa} + \gls{wpa}2 & \gls{tkip} + \gls{ccmp} & \gls{psk} & \texttt{6C383DA8BA} & 2.0 & \gls{pbc} \\
+            \gls{cpe}-7 & \texttt{A4:33:D7:53:2C:CF} & \texttt{VIVOFIBRA-2CC8-5G} & 5 \gls{G}\gls{Hz} & \gls{wpa}2 & \gls{ccmp} & \gls{psk} & \texttt{6C383DA8BA} & 2.0 & \gls{pbc} \\
+        \end{tabular}
+    }
+    \caption{Wireless Networks of the \gls{cpe}s}
+    \label{table:cpes_wlan}
+\end{table}
+
+\end{landscape}
+
+\FloatBarrier

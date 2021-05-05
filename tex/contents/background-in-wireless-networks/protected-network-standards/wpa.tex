@@ -1,0 +1,9 @@
+\subsubsection{WPA}
+
+The \gls{wpa} is a security protocol based on a draft of the \gls{ieee} 802.11i amendment. It was pushed by the \gls{wifi} Alliance in 2003 as an intermediate solution to the weaknesses of the \gls{wep} algorithm \cite{wifi_state}, allowing manufacturers to patch existing \gls{wep} devices with a safer authentication mechanism while maintaining interoperability. Since its conception, it was meant to be replaced as soon as the \gls{ieee} 802.11i amendment was published in its definitive form \cite{wpa_whitepaper}.
+
+\gls{wpa} moved away from the 40-bit and 104-bit \gls{wep} keys and adopted two new authentication methods. \gls{wpa}-Personal uses a human-readable passphrase as proof of knowledge to authenticate clients. While \gls{wpa}-Enterprise relies on the \gls{ieee} 802.1X standard to authenticate clients on a remote server using one the \gls{eap} \cite{wpa_whitepaper}. Both authentication mechanisms result in the \gls{pmk}, a key that is used to derive other keys used internally by \gls{wpa} as foundation for its privacy protocols.
+
+\input{contents/background-in-wireless-networks/protected-network-standards/wpa/psk}
+\input{contents/background-in-wireless-networks/protected-network-standards/wpa/tkip}
+\input{contents/background-in-wireless-networks/protected-network-standards/wpa/security}

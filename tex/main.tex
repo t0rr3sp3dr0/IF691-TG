@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\usepackage[acronym,symbols]{glossaries-extra}
+\usepackage{lscape}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{placeins}
+\usepackage{rotating}
+\usepackage{tocbibind}
+\usepackage{url}
+
+\title{A Security Analysis of Residential Gateways leased by a Brazilian Internet Service Provider to Customers}
+\author{Pedro Tôrres}
+\date{April 30, 2021}
+
+\lstset{
+    basicstyle=\ttfamily,
+    breakatwhitespace=true,
+    breaklines=true,
+    numbers=left,
+}
+
+\setabbreviationstyle[acronym]{long-short}
+\makeglossaries
+\input{acronyms}
+\input{symbols}
+
+\begin{document}
+
+\input{title-page}
+\clearpage
+
+\input{acknowledgements}
+\clearpage
+
+\glsunsetall
+
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\glsresetall
+
+\input{contents}
+\clearpage
+
+\appendix
+\input{appendices}
+\clearpage
+
+\bibliographystyle{abbrv}
+\bibliography{references}
+\clearpage
+
+\printglossary[type=\acronymtype]
+\clearpage
+
+\printglossary[type=symbols]
+\clearpage
+
+\end{document}

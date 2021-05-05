@@ -1,0 +1,10 @@
+\section{HTTP Management Interface}
+\label{section:http_mgt_iface}
+
+All \glspl{cpe} researched have an \gls{http} Management Interface and it is enabled by default. The interface is a web service and as such, it is susceptible to a wide range of attacks if not properly implemented. Additionally, the management interface is accessible from the \gls{wan}-side on some devices. These factors make it an excellent attack vector.
+
+This chapter analyses the different security aspects of the \gls{http} Management Interface as implemented on each \gls{cpe}. The problems are assessed and the impact discussed.
+
+\input{contents/http-management-interface-analysis/session}
+\input{contents/http-management-interface-analysis/unauthenticated-routes}
+\input{contents/http-management-interface-analysis/symbolic-links}

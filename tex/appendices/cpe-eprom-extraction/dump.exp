@@ -1,0 +1,17 @@
+#!/usr/bin/env expect
+set timeout -1
+log_file log.txt
+
+spawn telnet 192.168.15.1
+expect "Username:"
+send "support\r"
+expect "Password:"
+send "pzxTPx6F\r"
+expect "$$"
+send "sh\r"
+expect "XDSL>"
+send "show system flashlayout\r"
+expect "XDSL>"
+send "memory show 0xb4000000 length 0x800000\r"
+expect "XDSL>"
+send "exit\r"

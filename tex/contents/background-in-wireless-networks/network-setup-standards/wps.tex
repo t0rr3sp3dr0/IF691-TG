@@ -1,0 +1,7 @@
+\subsubsection{WPS}
+
+Originally called \gls{wsc}, the \gls{wps} was introduced by Cisco in 2006 as an alternative authentication method for \gls{wpa} networks. The main goal of this protocol is "to simplify the security setup and management of wireless networks" at home, allowing a client to acquire network credentials with the \gls{pbc}, by typing a \gls{pin}, or via \gls{nfc} \cite{wps_spec}.
+
+When \gls{wps} is configured to authenticate with a \gls{pin}, it uses an 8-digit number. The last digit of the \gls{pin} is a checksum of the first 7 digits, so there are \( 10^7 \) possible \gls{pin}s, too many to be brute-forced online. But in 2011 a researcher discovered that \gls{wps} reported the correctness of the first and last 4-digits of the \gls{pin} individually, making it possible to gain access to the network in, at most, \( 10^4 + 10^3 \) attempts \cite{viehboeck}. This flaw was fixed on version 2.0.2 of \gls{wps} \cite{wps_spec}.
+
+In 2014, a problem in the implementation of \gls{wps} by several vendors made it feasible to perform an offline brute-force attack \cite{pixiedust}. The lack of entropy allowed the state of the internal \gls{prng} to be derived from information retrieved by partially executing the \gls{wps} protocol on the victim, making it possible to compute the E-S1 and E-S2 nonces and subsequently brute-force the \gls{pin}. The E-S1 and E-S2 nonces are 128 random bits sent by the \gls{ap} to the \gls{sta} that are used to salt the first and second parts of the \gls{pin} before hashing it.

@@ -1,0 +1,7 @@
+\paragraph{Security}
+
+In 2017, a vulnerability on the 4-way Handshake of \gls{wpa} was discovered \cite{krack}. The 4-way Handshake is designed so that the \gls{sta} and the \gls{ap} can prove to each other that they know the \gls{pmk} without disclosing it and exchange some information used to derive encryption keys \cite{ieee_80211_2020}. The vulnerability allowed attackers to reset the value of \gls{pn}, effectively making \gls{ccmp} reuse keystreams when encrypting data. Then, if a message encrypted with the reused keystream is known, it is possible to derive the keystream and therefore decrypt any other packet with the same nonce. This problem can be patched, without affecting interoperability with other devices, on the client-side software handling \gls{wpa} handshakes.
+
+Just like \gls{wep} and \gls{wpa}, \gls{wpa}2 is vulnerable to offline brute-force attacks. The complexity of the passphrase used is a key aspect of the network’s security \cite{wifi_state}.
+
+\gls{aes}-related attacks may be performed as well, but their practicality was not demonstrated so far.

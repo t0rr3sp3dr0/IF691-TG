@@ -1,0 +1,7 @@
+\paragraph{PSK}
+
+The \gls{psk} is the authentication protocol of \gls{wpa}-Personal networks \cite{wifi_state}. It derives a 256-bit key \gls{DK} using the \gls{pbkdf2} algorithm \cite{rfc8018} from a sequence \gls{P} of 8 to 63 \gls{ascii}-encoded characters, between ' ' (32) and '$\sim$' (126) \cite{ieee_80211_2020}. On \gls{pbkdf2} invocation, the \gls{ssid} of the network is used as the salt \gls{S}, the iteration count \gls{c} is set to 4096, and the length \gls{dkLen} of \gls{DK} is given in bytes.
+
+\[ \gls{DK} = \gls{pbkdf2}(\gls{P}, \gls{S}, \gls{c}, \gls{dkLen}) \]
+\[ \therefore \]
+\[ \gls{psk} = \gls{pbkdf2}(\gls{P}, \gls{ssid}, 4096, 256 / 8) \]

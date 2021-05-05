@@ -1,0 +1,59 @@
+<SOAP-ENV:Envelope
+xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<SOAP-ENV:Header>
+<cwmp:ID SOAP-ENV:mustUnderstand="1">1681692777</cwmp:ID>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<cwmp:Inform>
+<DeviceId>
+<Manufacturer>Askey</Manufacturer>
+<OUI>009096</OUI>
+<ProductClass>RTF3505VW-N2</ProductClass>
+<SerialNumber>1072230D83CC</SerialNumber>
+</DeviceId>
+<Event SOAP-ENC:arrayType="cwmp:EventStruct[1]">
+<EventStruct>
+<EventCode>6 CONNECTION REQUEST</EventCode>
+<CommandKey></CommandKey>
+</EventStruct>
+</Event>
+<MaxEnvelopes>1</MaxEnvelopes>
+<CurrentTime>2021-04-13T20:57:35</CurrentTime>
+<RetryCount>0</RetryCount>
+<ParameterList SOAP-ENC:arrayType="cwmp:ParameterValueStruct[7]">
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.DeviceInfo.SpecVersion</Name>
+<Value xsi:type="xsd:string">1.0</Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.DeviceInfo.HardwareVersion</Name>
+<Value xsi:type="xsd:string">REV4_B4</Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.DeviceInfo.SoftwareVersion</Name>
+<Value xsi:type="xsd:string">BR_SG_s00.00_g000_3505019</Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.DeviceInfo.ProvisioningCode</Name>
+<Value xsi:type="xsd:string">PROV</Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.ManagementServer.ConnectionRequestURL</Name>
+<Value xsi:type="xsd:string">http://127.0.0.1:7547/</Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.ManagementServer.ParameterKey</Name>
+<Value xsi:type="xsd:string"></Value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<Name>InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress</Name>
+<Value xsi:type="xsd:string">127.0.0.1</Value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:Inform>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

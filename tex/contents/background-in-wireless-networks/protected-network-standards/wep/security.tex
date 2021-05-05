@@ -1,0 +1,5 @@
+\paragraph{Security}
+
+The \gls{prng} used by \gls{wep} is the \gls{rc4} stream cipher \cite{ieee_80211_2020}. Stream ciphers are susceptible to attacks when a seed is used more than once, generating identical keystreams and effectively encrypting messages with the same key. This makes it possible to recover the seed used on the algorithm by analyzing messages encrypted with equivalent keys.
+
+On \gls{wep}, the seed used is the concatenation of the \gls{sk}, which is constant, and the \gls{iv}, which is 24-bit long \cite{ieee_80211_2020}. The maximum number of different seeds that can be used on a \gls{wep} network is not high enough, allowing the seed to be easily and rapidly be recovered by eavesdroppers using attacks such as \gls{fms} \cite{fms} and \gls{ptw} \cite{ptw}, thus compromising the \gls{sk} and the security of the entire network.

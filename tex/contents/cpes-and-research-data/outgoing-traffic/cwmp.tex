@@ -1,0 +1,57 @@
+\subsubsection{CWMP}
+
+On all \glspl{cpe} was observed \gls{cwmp} traffic to the \gls{isp} \gls{acs} in a very similar pattern. The default configuration points to an intermediary \gls{acs} with hardcoded credentials. Table \ref{table:cpes_acs_hardcoded} presents all different configurations found on the \gls{cpe}s.
+
+\begin{table}[h]
+    \makebox[\linewidth]{
+        \begin{tabular}{c|c|c}
+            \thead{\gls{acs} \gls{url}} & \thead{\gls{acs} Username} & \thead{\gls{acs} Password} \\
+            \hline
+            \url{http://acs.telesp.net.br:7005/cwmpWeb/WGCPEMgt} & \texttt{mitrastar} & \texttt{telefonica} \\
+            \url{http://acs.telesp.net.br:7005/cwmpWeb/WGCPEMgt} & \texttt{acsclient} & \texttt{telefonica} \\
+            \url{https://acs.gvt.net.br} & \texttt{acsclient} & \texttt{acsvivo15sca} \\
+            \url{https://acs.gvt.net.br} & \texttt{acsclient} & \texttt{acsgvt25sca} \\
+        \end{tabular}
+    }
+    \caption{Hardcoded \gls{acs} Credentials of the \gls{cpe}s}
+    \label{table:cpes_acs_hardcoded}
+\end{table}
+
+The \gls{cpe} sends a \gls{cwmp} Inform request that is answered with an \gls{acs} request for changing Connection Request Credentials and enabling Periodic Inform with an interval of 108000 seconds. The new Connection Request username set by the \gls{acs} is a combination of \gls{cpe} Serial Number, \gls{cpe} Product Class, and \gls{cpe} \gls{oui}, respectively concatenated with a dash used as a separator. The password is a 128-bit number encoded as a hexadecimal string, likely the \gls{md5} hash of an unknown value. A new password is issued everytime that the \gls{cpe} registers itself using the default \gls{cwmp} settings. Table \ref{table:cpes_connreq} presents the credentials acquired by each \gls{cpe} in one of the registrations with the default \gls{acs}.
+
+\begin{table}[h]
+    \makebox[\linewidth]{
+        \begin{tabular}{c|c|c}
+            \thead{\gls{cpe} Identifier} & \thead{Connection Request Username} & \thead{Connection Request Password} \\
+            \hline
+            \gls{cpe}-0 & \texttt{5CC9D3D8731B-RTA9227W-D112-C0D962} & \texttt{4f6a306dc705bab62a07415460231bec} \\
+            \gls{cpe}-1 & \texttt{542F8A6CBE99-RTV9015VW-C0D962} & \texttt{b10f38755e844832aa586ccca67572b7} \\
+            % \gls{cpe}-2 & \texttt{} & \texttt{} \\
+            % \gls{cpe}-3 & \texttt{} & \texttt{} \\
+            \gls{cpe}-4 & \texttt{1072230D83CC-RTF3505VW-N2-009096} & \texttt{7f6fc3cb94341ace99154184e71cd0eb} \\
+            \gls{cpe}-5 & \texttt{987ECA44F881-RTF8115VW-009096} & \texttt{da9e89b37c32650c44c826db21f54bc8} \\
+            % \gls{cpe}-6 & \texttt{} & \texttt{} \\
+            % \gls{cpe}-7 & \texttt{} & \texttt{} \\
+        \end{tabular}
+    }
+    \caption{Connection Request Credentials of the \gls{cpe}s}
+    \label{table:cpes_connreq}
+\end{table}
+
+After performing the requested changes and notifying the \gls{acs} about it, the \gls{acs} now requests the \gls{acs} \gls{url} and Credentials to be changed. The final \gls{acs} used by all \glspl{cpe} is the same. It was verified that the username and passwords used to access the \gls{acs} are the UNIX Timestamp of the time that the credentials were issued, respectively appended by characters `u` and `a`, as presented in Table \ref{table:cpes_acs_assigned}.
+
+\begin{table}[h]
+    \makebox[\linewidth]{
+        \begin{tabular}{c|c|c}
+            \thead{\gls{acs} \gls{url}} & \thead{\gls{acs} Username} & \thead{\gls{acs} Password} \\
+            \hline
+            \url{http://acs.telesp.net.br:7015/cwmpWeb/CPEMgt} & \texttt{\$\{UNIX\_TIMESTAMP\}u} & \texttt{\$\{UNIX\_TIMESTAMP\}a} \\
+        \end{tabular}
+    }
+    \caption{Assigned \gls{acs} Credentials of the \gls{cpe}s}
+    \label{table:cpes_acs_assigned}
+\end{table}
+
+A \gls{cwmp} Inform request is sent to the new \gls{acs}. If the device was running an outdated firmware at the time of the request, the \gls{acs} will respond if a \gls{cwmp} Download request with the Firmware Upgrade Image. In all cases, the firmware image was hosted under \url{http://201.95.254.33:18273/fileserver/}. The server seems to be accessible only from an \gls{ip} address that belongs to the \gls{isp}, other addresses experience timeouts when requesting data.
+
+\FloatBarrier

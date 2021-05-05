@@ -1,0 +1,5 @@
+\subsubsection{WEC}
+
+Intended to replace \gls{wps}, the \gls{wec} protocol uses, mainly,  \gls{qr} codes or \gls{nfc} tags to establish the network connection between the client and the station \cite{wec_spec}. It was designed with \gls{iot} devices in mind, standardizing the onboarding process and making it possible to change wireless configurations without having to re-join all devices to the network.
+
+The protocol relies on asymmetric cryptography to create a secure channel between the peers to exchange the credentials. Unlike \gls{wps}, there is no \gls{pin} and an attacker is not able to take advantage of a legitimate authentication initiation to acquire network credentials.

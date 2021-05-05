@@ -1,0 +1,30 @@
+\subsection{Management Interfaces}
+
+The \glspl{cpe} analyzed have two users registered, admin and support. All management interfaces can be accessed using these users, but permissions may differ.
+
+Both users share the same password, that is printed on each device label. Although patterns have been recognized in the password of all \gls{cpe}s, as presented in Table 10, none of them were identified to be derived from other information.
+
+\begin{table}[h]
+    \makebox[\linewidth]{
+        \begin{tabular}{c|c}
+            \thead{\gls{cpe} Identifier} & \thead{Password Pattern} \\
+            \hline
+            \gls{cpe}-0 & \texttt{[0-9A-Za-z]\{8\}} \\
+            \gls{cpe}-1 & \texttt{[0-9A-Za-z]\{8\}} \\
+            \gls{cpe}-2 & \texttt{[0-9a-z]\{8\}} \\
+            \gls{cpe}-3 & \texttt{[0-9a-z]\{8\}} \\
+            \gls{cpe}-4 & \texttt{[0-9a-f]\{8\}} \\
+            \gls{cpe}-5 & \texttt{[0-9a-z]\{8\}} \\
+            \gls{cpe}-6 & \texttt{[0-9a-f]\{8\}} \\
+            \gls{cpe}-7 & \texttt{[0-9a-f]\{8\}} \\
+        \end{tabular}
+    }
+    \caption{Management Interface Password Pattern of the \gls{cpe}s}
+    \label{table:cpes_mgtiface_pattern}
+\end{table}
+
+An online brute-force attack was performed on the \gls{http} Management Interfaces of the \glspl{cpe} by writing a C program that opens a socket with the server and sends requests as fast as possible, but the results indicate that it is not feasible to exploit it with this technique. The \gls{http} server is slow and seems to only process one request at a time, the performance decreased significantly when parallelizing the attack due to the sequential processing of the \gls{http} server.
+
+Although, if some way of extracting the hashed passwords from the devices is discovered, most of the passwords could be cracked in a reasonable amount of time giving the pattern constraints. The kind of vulnerability that allows the hash extraction is not common, but it has been on some \glspl{crg} in recent years.
+
+\FloatBarrier
